@@ -1,0 +1,32 @@
+body {
+  padding: 0;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+.mask{
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0.8;
+  width: 800px;
+  height: 600px;
+    background: #000;
+}
+.alert{
+  width: 300px;
+  height: 100px;
+  background: #fff;
+  border-radius: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top:-150px;
+  margin-left:-150px;
+}
+.title{
+  text-align: center;
+  font-size: 20px;
+}

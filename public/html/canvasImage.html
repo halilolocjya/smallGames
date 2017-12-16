@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>cavas Image</title>
+
+
+</head>
+
+<body>
+	<p>原图：</p>
+	<div align="center" class="img_photo">
+		<img src="../images/skyDemo.jpg" width="300" id="tets">
+		<img src="../images/skyDemo2.jpg" width="100" id="tets2">
+
+	</div>
+	<p> 合成图：
+		<img src="" alt="" id="res">
+	</p>
+	<p> canvas 画板</p>
+	<canvas id="myCanvas" width="250" height="300" style="border:1px solid #d3d3d3;">您的浏览器不支持 HTML5 canvas 标签。</canvas>
+
+	<script>
+		var c = document.getElementById("myCanvas");
+		var ctx = c.getContext("2d");
+		var img = document.getElementById("tets");
+		var img2 = document.getElementById("tets2");
+		img2.setAttribute('crossOrigin', 'anonymous');
+
+		function gId(id) {
+			return document.getElementById(id);
+		}
+		var a = 0
+		img.onload = function() {
+			console.log(img)
+			ctx.drawImage(img, 10, 10);
+			a++;
+			cb();
+		}
+		img2.onload = function() {
+			console.log(img2)
+			ctx.drawImage(img2, 5, 2);
+			a++;
+			cb();
+		}
+
+		function cb() {
+			if (a !== 2) {
+				return;
+			}
+			var image = c.toDataURL("image/png"); //base64
+			// var w=window.open('about:blank','image from canvas');
+			gId("res").setAttribute("src", image);
+		}
+
+		// for(var i=0;i<img.length;i++){
+		// 	console.log(img[i]);
+		//
+		//
+		// }
+	</script>
+</body>
+
+</html>
